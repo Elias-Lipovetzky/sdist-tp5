@@ -1,0 +1,11 @@
+Frontend: localhost:3000
+API: localhost:5000
+Primero sin CORS → falla
+Después habilitamos CORS → funciona
+Finalmente mostramos el preflight OPTIONS con POST.
+
+desde la carpeta "demo-cors"
+
+	python3 -m venv .venv
+	source .venv/bin/activate
+	pip install flask flask-cors

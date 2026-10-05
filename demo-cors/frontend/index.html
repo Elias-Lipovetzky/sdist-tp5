@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>Demo CORS</h2>
+
+<button onclick="listar()">GET usuarios</button>
+<button onclick="crear()">POST usuario</button>
+<pre id="resultado"></pre>
+
+<script>
+async function listar() {
+    const r = await fetch("/api/usuarios");
+    document.getElementById("resultado").textContent = await r.text();
+}
+
+async function crear() {
+    const r = await fetch("/api/usuarios", {
+        method: "POST",
+        headers: {"Content-Type": "application/json"},
+        body: JSON.stringify({id: 3, nombre: "Pedro"})
+    });
+
+    document.getElementById("resultado").textContent = await r.text();
+}
+</script>
+
+</body>
+</html>
